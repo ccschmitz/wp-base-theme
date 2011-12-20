@@ -1,20 +1,20 @@
 <?php
-/**
- * A unique identifier is defined to store the options in the database and reference them from the theme.
- * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
- * If the identifier changes, it'll appear as if the options have been reset.
- * 
- */
 
-function optionsframework_option_name() {
-	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
-	$themename = $themename['Name'];
-	$themename = preg_replace("/\W/", "", strtolower($themename) );
-	
-	$optionsframework_settings = get_option('optionsframework');
-	$optionsframework_settings['id'] = $themename;
-	update_option('optionsframework', $optionsframework_settings);
+if ( !function_exists( 'optionsframework_init' ) ) {
+
+	/**
+	 * Set the file path based on whether the Options Framework Theme is a parent theme or child theme 
+	 */
+	if ( get_stylesheet_directory() == get_template_directory() ) {
+		define( 'OPTIONS_FRAMEWORK_URL', get_template_directory() . '/functions/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'template_directory' ) . '/functions/options-framework/' );
+	} else {
+		define( 'OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/functions/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'stylesheet_directory' ) . '/functions/options-framework/' );
+	}
+
+	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
+
 }
 
 /**
@@ -64,4 +64,5 @@ function optionsframework_options() {
 	);
 	
 	return $options;
+
 }
