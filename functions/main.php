@@ -1,5 +1,19 @@
 <?php
 
+// Load the options framework
+function optionsframework_option_name() {
+
+	// This gets the theme name from the stylesheet (lowercase and without spaces)
+	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
+	$themename = $themename['Name'];
+	$themename = preg_replace("/\W/", "", strtolower($themename) );
+
+	$optionsframework_settings = get_option('optionsframework');
+	$optionsframework_settings['id'] = $themename;
+	update_option('optionsframework', $optionsframework_settings);
+
+}
+
 // See if more than one page exists
 function show_posts_nav() {
 	global $wp_query;
