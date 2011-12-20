@@ -1,0 +1,16 @@
+/*
+Theme Name: HTML5 Boilerplate for Wordpress
+Theme URI: http://www.chris-schmitz.com/
+Description: A bare-bones WordPress theme based on the HTML5 Boilerplate
+Version: 1.0
+Author: Chris Schmitz
+Author URI: http://www.chris-schmitz.com
+Tags: HTML5, Boilerplate, HTML5Boilerplate, H5BP
+License: The Unlicense
+License URI: unlicense.org
+*/
+
+@import url('css/base.css');
+@import url('css/layout.css');
+@import url('css/module.css');
+@import url('css/state.css');

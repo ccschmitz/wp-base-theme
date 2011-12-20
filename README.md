@@ -1,0 +1,1 @@
+A starter WordPress theme based on the [HTML5 Boilerplarte](http://html5boilerplate.org).

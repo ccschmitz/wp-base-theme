@@ -1,0 +1,13 @@
+/* TEAM */
+  Web Designer: John Sternig
+  Twitter: @beperceived
+  From: West Bend, WI
+
+  Web Developer: Chris Schmitz
+  Twitter: @ccschmitz
+  From: De Pere, WI
+
+/* SITE */
+  Site name: Perception
+  Site URL: http://beperceived.com/
+  Built with: WordPress, PHP, HTML5, CSS3, jQuery
