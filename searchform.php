@@ -1,3 +1,7 @@
-<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-	<input type="search" placeholder="Search this site" name="s" value="" id="s" />
+<form action="<?php bloginfo('siteurl'); ?>" id="searchform" method="get">
+	<div>
+		<label for="s" class="screen-reader-text">Search for:</label>
+		<input type="search" id="s" name="s" value="" />
+		<input type="submit" value="Search" id="searchsubmit" />
+	</div>
 </form>
