@@ -1,13 +1,17 @@
 <?php
 /**
- * Page Template: Sidebar Left
+ * Template Name: Sidebar Left
  */
 ?>
 
 <?php get_header(); ?>
 
-	<?php get_sidebar(); ?>
+	<div class="four columns">
+		<?php get_sidebar(); ?>
+	</div>
 
-	<?php get_template_part( 'loop' ); ?>
+	<div class="eight columns">
+		<?php get_template_part( 'loop' ); ?>
+	</div>
 	
 <?php get_footer(); ?>

@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 
-	<?php get_template_part( 'loop', 'blog' ); ?>
+	<div class="eight columns">
+		<?php get_template_part( 'loop', 'blog' ); ?>
+	</div>
 
-	<?php get_sidebar(); ?>
+	<div class="four columns">
+		<?php get_sidebar( 'blog' ); ?>
+	</div>
 
 <?php get_footer(); ?>

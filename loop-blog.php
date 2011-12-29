@@ -10,8 +10,7 @@
 				<?php endif; ?>
 			</header>
 			
-			<?php the_excerpt(); ?>
-			<p><a class="post-link" href="<?php the_permalink(); ?>">&gt;&gt; Continue Reading</a></p>
+			<?php the_content(); ?>
 
 			<footer>
 				<?php wp_link_pages( 'before=<div class="post-page-links">Page:&after=</div>' ); ?>

@@ -32,8 +32,8 @@
 	</head>
 	<body <?php body_class(); ?>>
 	
-		<div id="container">
-			<header id="header">
+		<div id="container" class="container">
+			<header id="header" class="row">
 				<h1><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 				
 				<?php
@@ -47,4 +47,4 @@
 				?>
 			</header>
 			
-			<div id="main" class="clearfix" role="main">
+			<div id="main" class="row" role="main">

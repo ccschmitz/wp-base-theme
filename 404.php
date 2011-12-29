@@ -1,15 +1,17 @@
 <?php get_header(); ?>
 
-	<article>
+	<article class="eight columns">
 
 		<h1>This is not the page you were looking for.</h1>
 				
-		<p>(Psst... try searcing)</p>
+		<p>(Psst... try searching)</p>
 		
 		<?php get_search_form(); ?>
 
 	</article>
 
-	<?php get_sidebar(); ?>
+	<div class="four columns">
+		<?php get_sidebar(); ?>
+	</div>
 
 <?php get_footer(); ?>

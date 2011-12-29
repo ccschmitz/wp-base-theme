@@ -12,13 +12,6 @@ require_once( CS_FUNCTIONS . 'sidebars.php' );
 add_action( 'after_setup_theme', 'cs_theme_setup' );
 
 function cs_theme_setup() {
-	global $content_width;
-
-	// Set the content width for things like video embeds	
-	if ( !isset( $content_width ) ) {
-		$content_width = 600;
-	}
-	
 	// Add theme support for WP features
 	add_theme_support( 'menus' );
 	add_theme_support( 'post-thumbnails' );

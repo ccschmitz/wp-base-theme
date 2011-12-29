@@ -10,7 +10,7 @@ License: The Unlicense
 License URI: unlicense.org
 */
 
-@import url('css/base.css');
-@import url('css/layout.css');
-@import url('css/module.css');
-@import url('css/state.css');
+@import 'css/base.css';
+@import 'css/layout.css';
+@import 'css/module.css';
+@import 'css/state.css';

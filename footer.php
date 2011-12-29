@@ -1,6 +1,6 @@
 			</div><!-- #main  -->
 
-			<footer id="footer">
+			<footer id="footer" class="row">
 				<p class="copyright"><?php echo of_get_option( 'footer_copyright' ); ?></p>
 			</footer>
 		</div><!-- #container -->

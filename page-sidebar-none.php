@@ -1,12 +1,12 @@
 <?php
 /**
- * Page Template: No Sidebar
+ * Template Name: No Sidebar
  */
 ?>
 
 <?php get_header(); ?>
 
-	<div class="content">
+	<div class="twelve columns">
 		<?php get_template_part( 'loop' ); ?>
 	</div>
 	

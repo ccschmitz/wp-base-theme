@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-	<?php the_content(); ?>
-
-	<?php get_sidebar(); ?>
+	<div class="twelve columns">
+		<?php get_template_part( 'loop' ); ?>
+	</div>
 
 <?php get_footer(); ?>
