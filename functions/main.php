@@ -38,8 +38,15 @@ function cs_login_head() {
 
 // Load JavaScripts
 function cs_load_scripts() {
-	// Register and enqueue custom Javascript here (jQuery example)
-	// wp_enqueue_script( 'jquery' );
+	// 
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', array(), false, true );
+	wp_enqueue_script( 'jquery' );
+
+	// Load custom JavaScript from 'js/script.src' in the template directory
+	$script_src = get_stylesheet_directory_uri() . '/js/script.js';
+	wp_register_script( 'custom_script', $script_src, array(), false, true );
+	wp_enqueue_script( 'custom_script' );
 
 	// Load the comment reply JavaScript
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
