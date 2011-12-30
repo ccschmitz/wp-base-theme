@@ -1,4 +1,5 @@
 <?php if ( have_posts() ) : ?>
+
 	<?php while ( have_posts() ) : the_post(); ?>
 	
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -36,4 +37,9 @@
 	</nav>
 
 	<?php endif; ?>
+
+<?php else : ?>
+
+	<?php get_template_part( 'no-results' ); ?>
+
 <?php endif; ?>

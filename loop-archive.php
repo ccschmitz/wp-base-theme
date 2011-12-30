@@ -58,9 +58,6 @@
 
 <?php else : ?>
 
-	<p>There are no posts.</p>
-	<p>Try searching:</p>
-
-	<?php get_search_form(); ?>
-
+	<?php get_template_part( 'no-results' ); ?>
+	
 <?php endif; ?>
