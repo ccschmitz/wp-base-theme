@@ -1,19 +1,16 @@
 <?php
 
-if ( !function_exists( 'optionsframework_init' ) ) {
+// Setup the name of the options framework
+function optionsframework_option_name() {
 
-	/**
-	 * Set the file path based on whether the Options Framework Theme is a parent theme or child theme 
-	 */
-	if ( get_stylesheet_directory() == get_template_directory() ) {
-		define( 'OPTIONS_FRAMEWORK_URL', get_template_directory() . '/includes/options-framework/' );
-		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'template_directory' ) . '/includes/options-framework/' );
-	} else {
-		define( 'OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/includes/options-framework/' );
-		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'stylesheet_directory' ) . '/includes/options-framework/' );
-	}
+	// This gets the theme name from the stylesheet (lowercase and without spaces)
+	$themename = get_theme_data( STYLESHEETPATH . '/style.css' );
+	$themename = $themename['Name'];
+	$themename = preg_replace( "/\W/", "", strtolower($themename) );
 
-	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
+	$optionsframework_settings = get_option( 'optionsframework' );
+	$optionsframework_settings['id'] = $themename;
+	update_option( 'optionsframework', $optionsframework_settings );
 
 }
 

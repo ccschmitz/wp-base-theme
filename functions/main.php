@@ -1,16 +1,18 @@
 <?php
 
 // Load the options framework
-function optionsframework_option_name() {
+if ( !function_exists( 'optionsframework_init' ) ) {
 
-	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
-	$themename = $themename['Name'];
-	$themename = preg_replace("/\W/", "", strtolower($themename) );
+	// Set the file path based on whether the Options Framework Theme is a parent theme or child theme 
+	if ( get_stylesheet_directory() == get_template_directory() ) {
+		define( 'OPTIONS_FRAMEWORK_URL', get_template_directory() . '/includes/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'template_directory' ) . '/includes/options-framework/' );
+	} else {
+		define( 'OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/includes/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'stylesheet_directory' ) . '/includes/options-framework/' );
+	}
 
-	$optionsframework_settings = get_option('optionsframework');
-	$optionsframework_settings['id'] = $themename;
-	update_option('optionsframework', $optionsframework_settings);
+	require_once ( OPTIONS_FRAMEWORK_URL . 'options-framework.php' );
 
 }
 
@@ -38,10 +40,15 @@ function cs_login_head() {
 
 // Load JavaScripts
 function cs_load_scripts() {
-	// 
+	// Setup jQuery
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', array(), false, true );
 	wp_enqueue_script( 'jquery' );
+
+	// Load Modernizr
+	$script_src = get_stylesheet_directory_uri() . '/js/libs/modernizr-2.0.6.min.js';
+	wp_register_script( 'modernizr', $script_src );
+	wp_enqueue_script( 'modernizr' );
 
 	// Load custom JavaScript from 'js/script.src' in the template directory
 	$script_src = get_stylesheet_directory_uri() . '/js/script.js';
