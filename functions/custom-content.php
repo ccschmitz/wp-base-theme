@@ -20,7 +20,6 @@ function create_slider_post_type() {
 add_action( 'init', 'create_slider_post_type' );
 
 function slider_enter_title( $input ) {
-
 	global $post_type;
 
 	if ( get_post_type() == 'slider' ) {
