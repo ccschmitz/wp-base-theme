@@ -36,9 +36,8 @@ function cs_theme_setup() {
 	@ini_set('memory_limit', '128M');
 }
 
-// Compile LESS Automatically
-$less_file = dirname(__FILE__) . '/css/less/styles.less';
-$css_file = dirname(__FILE__) . '/css/styles.css';
-
-$css = lessc::cexecute( $less_file );
-file_put_contents( $css_file, $css['compiled'] );
+// Compile LESS files automatically
+lessc::ccompile( dirname(__FILE__) . '/css/less/base.less', dirname(__FILE__) . '/css/base.css' );
+lessc::ccompile( dirname(__FILE__) . '/css/less/layout.less', dirname(__FILE__) . '/css/layout.css' );
+lessc::ccompile( dirname(__FILE__) . '/css/less/module.less', dirname(__FILE__) . '/css/module.css' );
+lessc::ccompile( dirname(__FILE__) . '/css/less/state.less', dirname(__FILE__) . '/css/state.css' );

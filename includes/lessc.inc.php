@@ -38,7 +38,7 @@ class lessc {
 	protected $line;
 
 	public $indentLevel;
-	public $indentChar = '  ';
+	public $indentChar = '	';
 
 	protected $env = null;
 
