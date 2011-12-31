@@ -6,11 +6,11 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	 * Set the file path based on whether the Options Framework Theme is a parent theme or child theme 
 	 */
 	if ( get_stylesheet_directory() == get_template_directory() ) {
-		define( 'OPTIONS_FRAMEWORK_URL', get_template_directory() . '/functions/options-framework/' );
-		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'template_directory' ) . '/functions/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_URL', get_template_directory() . '/includes/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'template_directory' ) . '/includes/options-framework/' );
 	} else {
-		define( 'OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/functions/options-framework/' );
-		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'stylesheet_directory' ) . '/functions/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/includes/options-framework/' );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo( 'stylesheet_directory' ) . '/includes/options-framework/' );
 	}
 
 	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
