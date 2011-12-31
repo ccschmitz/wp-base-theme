@@ -2,11 +2,15 @@
 
 // Theme constants
 define( 'CS_FUNCTIONS', get_template_directory() . '/functions/' );
+define( 'CS_INCLUDES', get_template_directory() . '/includes/' );
 
 // Require function files
 require_once( CS_FUNCTIONS . 'main.php' );
 require_once( CS_FUNCTIONS . 'menus.php' );
 require_once( CS_FUNCTIONS . 'sidebars.php' );
+
+// Require other included files
+require_once( CS_INCLUDES . 'lessc.inc.php' );
 
 // Setup the theme
 add_action( 'after_setup_theme', 'cs_theme_setup' );
@@ -31,3 +35,6 @@ function cs_theme_setup() {
 	// Increase the default memory limit
 	@ini_set('memory_limit', '128M');
 }
+
+// Compile LESS Automatically
+lessc::ccompile( dirname(__FILE__) . '/css/styles.less', dirname(__FILE__) . '/css/styles.css' );

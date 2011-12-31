@@ -19,15 +19,13 @@
 		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/styles.css">
 
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 		<!-- BEGIN: wp_head() -->	
 		<?php wp_head(); ?>
 		<!-- END: wp_head() -->
-
-		<script src="<?php bloginfo( 'template_url' ); ?>/js/libs/modernizr-2.0.6.min.js"></script>
 
 	</head>
 	<body <?php body_class(); ?>>
@@ -39,8 +37,7 @@
 				<?php
 				$args = array(
 					'container' => 'nav',
-					'container_id' => 'main-nav',
-					'container_class' => 'clearfix',
+					'menu_class' => 'main-nav clearfix',
 					'menu' => 'main_nav'
 				);
 				wp_nav_menu( $args );
