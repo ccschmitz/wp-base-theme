@@ -2,7 +2,6 @@
 
 // Load the options framework
 if ( !function_exists( 'optionsframework_init' ) ) {
-
 	// Set the file path based on whether the Options Framework Theme is a parent theme or child theme 
 	if ( get_stylesheet_directory() == get_template_directory() ) {
 		define( 'OPTIONS_FRAMEWORK_URL', get_template_directory() . '/includes/options-framework/' );
@@ -13,7 +12,6 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	}
 
 	require_once ( OPTIONS_FRAMEWORK_URL . 'options-framework.php' );
-
 }
 
 // See if more than one page exists
