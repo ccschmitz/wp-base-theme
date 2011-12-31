@@ -4,13 +4,14 @@
 define( 'CS_FUNCTIONS', get_template_directory() . '/functions/' );
 define( 'CS_INCLUDES', get_template_directory() . '/includes/' );
 
+// Require third-party files
+require_once( CS_INCLUDES . 'lessc.inc.php' );
+
 // Require function files
+require_once( CS_FUNCTIONS . 'custom-content.php' );
 require_once( CS_FUNCTIONS . 'main.php' );
 require_once( CS_FUNCTIONS . 'menus.php' );
 require_once( CS_FUNCTIONS . 'sidebars.php' );
-
-// Require other included files
-require_once( CS_INCLUDES . 'lessc.inc.php' );
 
 // Setup the theme
 add_action( 'after_setup_theme', 'cs_theme_setup' );
