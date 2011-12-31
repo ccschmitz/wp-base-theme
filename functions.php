@@ -37,4 +37,8 @@ function cs_theme_setup() {
 }
 
 // Compile LESS Automatically
-lessc::ccompile( dirname(__FILE__) . '/css/styles.less', dirname(__FILE__) . '/css/styles.css' );
+$less_file = dirname(__FILE__) . '/css/less/styles.less';
+$css_file = dirname(__FILE__) . '/css/styles.css';
+
+$css = lessc::cexecute( $less_file );
+file_put_contents( $css_file, $css['compiled'] );

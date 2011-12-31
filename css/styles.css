@@ -1,3 +1,4 @@
+@import url("mobile.less");
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display:block; }
 audio, canvas, video {
   display:inline-block;
@@ -610,7 +611,16 @@ table.hide-on-tablets { display:table !important; }
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
   .video { padding-top:0; }
 }
+.main-nav { background:green; }
 .main-nav li {
   display:inline-block;
   width:auto;
 }
+.main-nav ul {
+  display:none;
+  position:absolute;
+  left:0;
+  top:100%;
+  visibility:hidden;
+}
+.main-nav li:hover ul { display:block; }

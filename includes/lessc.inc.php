@@ -75,7 +75,7 @@ class lessc {
 	);
     
 	public $importDisabled = false;
-	public $importDir = '';
+	public $importDir = '../css/less';
 
 	public $compat = false; // lessjs compatibility mode, does nothing right now
 
