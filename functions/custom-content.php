@@ -20,16 +20,10 @@ function create_slider_post_type() {
 }
 add_action( 'init', 'create_slider_post_type' );
 
-// Remove the WYSIWYG editor for the slider publishing page
-function remove_slider_wysiwyg() {
-	if ( get_post_type() == 'slider' )
-		return false;
-}
-add_filter( 'user_can_richedit', 'remove_slider_wysiwyg' );
-
 // Update the placeholder text for the title of slides
 function change_slider_enter_title(  ) {
-	if ( get_post_type() == 'slider' )
+	if ( get_post_type() == 'slider' ) {
 		return 'Slide Title (not publicly visible)';
+	}
 }
 add_filter( 'enter_title_here', 'change_slider_enter_title' );
