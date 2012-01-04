@@ -24,13 +24,19 @@ function show_posts_nav() {
 function cs_login_head() {
 	// Make sure there is a logo uploaded before replacing the WP logo
 	if ( of_get_option( 'logo_upload' ) ) {
+		// Get the image dimensions of the uploaded image
+		$image_info = getimagesize( of_get_option( 'logo_upload' ) );
+
 		echo '<style type="text/css">
 		body.login #login h1 a {
-			background: url("'.of_get_option( 'login_logo' ).'") no-repeat scroll center top transparent;
-			height: 90px;
+			background: url("'.of_get_option( 'logo_upload' ).'") no-repeat scroll center top transparent;
+			display: block;
+			height: '. $image_info[1] .'px;
+			max-height: 150px;
 			padding-bottom: 0;
-			margin-bottom: 20px;
-			width: 320px;
+			margin: 0 auto 20px;
+			width: '. $image_info[0] .'px;
+			max-width: 320px;
 		}
 		</style>';
 	}
