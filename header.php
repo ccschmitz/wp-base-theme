@@ -16,7 +16,10 @@
 		<meta name="description" content="<?php bloginfo( 'tagline' ); ?>">
 		<meta name="author" content="">
 
-		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<?php if ( of_get_option( 'favicon_upload' ) ) : ?>
+			<link rel="shortcut icon" href="<?php echo of_get_option( 'favicon_upload' ); ?>" />
+		<?php endif; ?>
+
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/style.css">
