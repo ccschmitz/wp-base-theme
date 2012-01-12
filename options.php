@@ -28,37 +28,37 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
-	// Logo upload
-	$options[] = array(
-		'name' => 'Logo',
-		'desc' => 'Upload a logo to be displayed on the login screen and throughout the site.',
-		'id' => 'logo_upload',
-		'type' => 'upload'
-	);
+		// Logo upload
+		$options[] = array(
+			'name' => 'Logo',
+			'desc' => 'Upload a logo to be displayed on the login screen and throughout the site.',
+			'id' => 'logo_upload',
+			'type' => 'upload'
+		);
 
-	// Favicon upload
-	$options[] = array(
-		'name' => 'Favicon',
-		'desc' => 'Upload favicon to be used in the browser tab.',
-		'id' => 'favicon_upload',
-		'type' => 'upload'
-	);
+		// Favicon upload
+		$options[] = array(
+			'name' => 'Favicon',
+			'desc' => 'Upload favicon to be used in the browser tab.',
+			'id' => 'favicon_upload',
+			'type' => 'upload'
+		);
 
-	// Footer copyright
-	$options[] = array(
-		'name' => 'Footer Copyright',
-		'desc' => 'The copyright information for the footer.',
-		'id' => 'footer_copyright',
-		'type' => 'text'
-	);
+		// Footer copyright
+		$options[] = array(
+			'name' => 'Footer Copyright',
+			'desc' => 'The copyright information for the footer.',
+			'id' => 'footer_copyright',
+			'type' => 'text'
+		);
 
-	// Google Analytics
-	$options[] = array(
-		'name' => 'Analytics',
-		'desc' => 'Insert your analytics tracking code here. Not the full script, just the identifier <strong>("UA-12345678-9")</strong>.',
-		'id' => 'google_analytics',
-		'type' => 'text'
-	);
+		// Google Analytics
+		$options[] = array(
+			'name' => 'Analytics',
+			'desc' => 'Insert your analytics tracking code here. Not the full script, just the identifier <strong>("UA-12345678-9")</strong>.',
+			'id' => 'google_analytics',
+			'type' => 'text'
+		);
 	
 	return $options;
 
