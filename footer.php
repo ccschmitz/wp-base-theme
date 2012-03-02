@@ -10,7 +10,7 @@
 		<!-- END: wp_footer() -->
 
 		<!-- Local jQuery fallback if it doesn't load from the CDN -->
-		<script>window.jQuery || document.write('<script src="<?php bloginfo( 'template_directory' ); ?>js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="<?php bloginfo( 'template_directory' ); ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
 		<!--[if lt IE 7 ]>
 			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
